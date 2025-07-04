@@ -1,0 +1,159 @@
+
+
+body{
+  background-color: #36618F;
+}
+/* App.css */
+.container {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 600px;
+  background-color: #F8F9FE;
+  margin: 50px auto;
+  flex-direction: column;
+  border:2px solid black;
+  border-radius: 2rem;
+}
+
+h1 {
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+.inputs{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+}
+
+.input-field{
+  height: 30px;
+  width:110px;
+}
+
+.input-label{
+  font-weight: 100;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 5px;
+  margin-left: 9px;
+
+}
+.btn{
+  background-color: #36618F;
+  border-radius: 1rem;
+  height: 40px;
+  width:120px;
+  color: #F8F9FE;
+}
+
+.btn_div {
+  display: flex;
+  justify-content: flex-end;  /* aligns button to right */
+  width: 90%;                 /* make it take full width */
+}
+.dropdown{
+  background-color: #36618F;
+  border-radius: 1rem;
+  height: 40px;
+  width:120px;
+  color: #F8F9FE;
+
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  gap:90px;
+}
+
+
+
+.container2 {
+  background-color: #36618F;
+  height: 350px;
+  width: 350px;
+  margin-top: 10px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  background-color: #F8F9FE;
+  height: 40px;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 6px;
+  color: black;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;      /* center content horizontally */
+  align-items: center;          /* center content vertically */
+  border: 2px solid #36618F;
+  border-radius: 1rem;
+  height: 45px;
+  width: 200px;
+  color: #36618F;
+  margin: 20px auto 0;          /* center in container, add top space */
+  background-color: #F8F9FE;    /* optional for contrast */
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.box {
+  background-color: #F8F9FE;
+  border-radius: 6px;
+  color: #333;
+  padding: 10px 15px;
+  margin: 10px auto;
+  width: 80%;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.expense-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.expense-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.expense-category {
+  font-style: italic;
+  color: #36618F;
+}
+
+.expense-amount {
+  font-weight: 600;
+}
+
+.expense-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+
