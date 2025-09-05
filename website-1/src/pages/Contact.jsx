@@ -1,8 +1,27 @@
 import { RiContactsBookUploadLine } from "react-icons/ri";
 import { CiClock2, CiFacebook, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { FaHandshake } from "react-icons/fa";
+import {useState} from "react"
 
 const Contact = () => {
+  const [user,setUser]=useState({
+    name:""
+    ,email:"",
+    number:"",
+    description:""
+  })
+
+  const handleOnchange=(e)=>{
+     const {name,value}=e.target;
+     setUser((prev)=>({...prev,[name]:value}))
+  }
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevent page reload
+    console.log("Form Data:", user); // see the data in console
+  };
+
   return (
     <div className="bg-gray-100 flex flex-col md:flex-row md:gap-20 items-start justify-between p-6 md:p-10 w-full max-w-6xl mx-auto">
       
@@ -53,29 +72,51 @@ const Contact = () => {
       {/* Right Section */}
       <div className="flex flex-col w-full md:w-1/2 mt-10 md:mt-0">
         <h1 className="text-2xl font-serif">Send Us A Message</h1>
-        <form className="flex flex-col gap-5 mt-5 py-5 w-full">
+        <form className="flex flex-col gap-5 mt-5 py-5 w-full" onSubmit={handleSubmit}>
           <input 
             type="text"
+            name="name"
+            value={user.name}
             placeholder="Your Name"
             className="border p-2 border-[#DDDDDD] bg-[#FAFAFA] w-full"
+            onChange={handleOnchange}
+            maxLength={15}
+            minLength={5}
           />
           <input 
             type="text"
+            name="email"
+            value={user.email}
             placeholder="Your Email" 
             className="border p-2 border-[#DDDDDD] bg-[#FAFAFA] w-full"
+            onChange={handleOnchange}
+            required
           />
           <input 
             type="text"
+            name="number"
+            value={user.number}
             placeholder="Contact Number"
             className="border p-2 border-[#DDDDDD] bg-[#FAFAFA] w-full"
+            onChange={handleOnchange}
+            pattern="[0-9]{10,15}"
+
           />
           <textarea 
             placeholder="Case Description" 
+            name="description" 
+            value={user.description}
             className="border p-2 border-[#DDDDDD] bg-[#FAFAFA] w-full"
+            onChange={handleOnchange}
+            required
+            maxLength={1000}
           />
-          <button className="text-[#B2986B] border border-[#B2986B] py-2 hover:bg-[#B2986B] hover:text-white transition">
+         <button 
+  type="submit" 
+  className="text-[#B2986B] border border-[#B2986B] py-2 hover:bg-[#B2986B] hover:text-white transition">
             Request an Appointment
           </button>
+
         </form>
       </div>
     </div>

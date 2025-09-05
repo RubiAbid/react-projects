@@ -25,7 +25,9 @@ const About = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full max-w-[800px] text-center sm:text-left"
       >
-        <h1 className="text-[#1E3A5F] py-5 text-3xl sm:text-4xl md:text-4xl font-bold">About</h1>
+<h1 className="text-center text-[#1E3A5F] py-5 text-3xl sm:text-3xl md:text-5xl lg:text-5xl font-bold">
+  About
+</h1>
         <p className="text-black font-bold text-sm sm:text-base md:text-lg leading-relaxed">
           B<span className="font-normal">aryalay.law</span> is a boutique corporate law firm in Pakistan providing comprehensive legal and tax advisory services, serving both domestic and international clients.  
           With a deep understanding of Pakistan's legal landscape and international best practices, we deliver:

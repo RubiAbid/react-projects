@@ -5,10 +5,12 @@ const Affiliation = () => {
 
   return (
     <div className="bg-white text-[#1E3A5F] p-6 sm:p-10 md:p-14 flex flex-col gap-6">
-      {/* Heading */}
-      <h2 className="font-stretch-50% text-3xl sm:text-4xl md:text-5xl font-bold">
+     <div className="flex justify-center items-center md:justify-start w-full">
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
         Affiliations
       </h2>
+</div>
+
 
 {/* Description - responsive */}
 <p className="text-base sm:text-sm md:text-lg font-bold text-black leading-relaxed 
@@ -21,12 +23,12 @@ const Affiliation = () => {
 </p>
 
       {/* Link Section */}
-      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-left sm:text-left">
+<div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 text-center sm:text-left">
         <h3 className="font-extrabold text-black text-base sm:text-lg md:text-xl">
           For more information, please visit the Abasin Consult website:
         </h3>
         <a
-          className="text-[#1E3A5F] text-base sm:text-lg md:text-xl underline font-extrabold break-words"
+    className="text-[#1E3A5F] text-base sm:text-lg md:text-xl underline font-extrabold"
           href="https://www.abasinconsult.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -34,6 +36,8 @@ const Affiliation = () => {
           www.abasinconsult.com
         </a>
       </div>
+
+
 
       {/* Updates Section */}
       <div className="mt-6 w-full">
