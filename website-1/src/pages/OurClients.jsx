@@ -38,7 +38,7 @@ const OurClients = () => {
 
 
 
-        <img
+      <img
           className="border rounded-md overflow-hidden w-20 h-20 sm:w-32 sm:h-32 xs:w-24 xs:h-24 md:w-40 lg:h-50 lg:w-50 md:h-30 object-cover border-white transition ease-in-out hover:scale-110"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0xJcCc_pIsebPFrh716xl5sx9e2L3f1tFnpwcq5VCgsOnM1Qx"
           alt="img6"

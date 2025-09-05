@@ -9,11 +9,11 @@ const Footer = () => {
         {/* Column 1 */}
         <div className="flex flex-col gap-4 sm:w-[300px]">
          <div className="w-full flex justify-center sm:justify-start">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaNIXsAZwVGZenEASkOXrHVY6nfD38xLLFkg&s"
-            alt="Logo"
-            className="h-[90px] w-[150px] bg-white rounded-md"
-          />
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaNIXsAZwVGZenEASkOXrHVY6nfD38xLLFkg&s"
+    alt="Logo"
+    className="h-[90px] w-[150px] bg-white rounded-md"
+  />
 </div>
 
           <p className="text-sm sm:text-base">

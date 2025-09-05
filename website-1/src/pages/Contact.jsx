@@ -103,7 +103,7 @@ const Contact = () => {
 
           />
           <textarea 
-            placeholder="Case Description" 
+            placeholder="Case Description"
             name="description" 
             value={user.description}
             className="border p-2 border-[#DDDDDD] bg-[#FAFAFA] w-full"
@@ -114,8 +114,8 @@ const Contact = () => {
          <button 
   type="submit" 
   className="text-[#B2986B] border border-[#B2986B] py-2 hover:bg-[#B2986B] hover:text-white transition">
-            Request an Appointment
-          </button>
+  Request an Appointment
+</button>
 
         </form>
       </div>
