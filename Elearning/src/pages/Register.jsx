@@ -1,0 +1,78 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const Register = () => {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-[#FFEDE1] px-4">
+      <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
+        <h1 className="text-2xl font-bold text-[#1B5241] mb-6 text-center">Register</h1>
+        
+        <form className="space-y-4">
+          {/* Name */}
+          <div className="flex flex-col">
+            <label className="text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input
+              required
+              type="text"
+              name="name"
+              placeholder="Enter name..."
+              className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1B5241]"
+            />
+          </div>
+
+          {/* Email */}
+          <div className="flex flex-col">
+            <label className="text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder="Enter email..."
+              className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1B5241]"
+            />
+          </div>
+
+          {/* Password */}
+          <div className="flex flex-col">
+            <label className="text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input
+              type="password"
+              name="password1"
+              placeholder="Enter password..."
+              className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1B5241]"
+            />
+          </div>
+
+          {/* Confirm Password */}
+          <div className="flex flex-col">
+            <label className="text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+            <input
+              type="password"
+              name="password2"
+              placeholder="Confirm password..."
+              className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1B5241]"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div>
+            <input
+              type="submit"
+              value="Register"
+              className="w-full bg-[#1B5241] text-white py-2 rounded-md hover:bg-[#A05425] transition-colors cursor-pointer"
+            />
+          </div>
+        </form>
+
+        <p className="text-center text-sm text-gray-600 mt-4">
+          Already have an account?{" "}
+          <Link to="/login" className="text-[#A05525] font-medium hover:underline">
+            Login
+          </Link>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+export default Register

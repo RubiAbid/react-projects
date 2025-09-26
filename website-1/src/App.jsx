@@ -1,3 +1,4 @@
+// App.jsx
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage"
@@ -10,15 +11,25 @@ import FAQ from './pages/FAQ'
 import Footer from './components/Footer'
 import OurClients from './pages/OurClients'
 
-function App() {
+// 👇 Import ThemeProvider + ThemeToggle + useContext
+import { ThemeProvider, ThemeToggle, ThemeContext } from './context/ThemeContext'
+import { useContext } from 'react'
+
+function AppContent() {
+  const { theme } = useContext(ThemeContext)  // get theme value
+
   return (
-    <BrowserRouter>
+    <div
+      className="min-h-screen flex flex-col"
+      style={{
+        backgroundColor: theme === "dark" ? "black" : "white",
+        color: theme === "dark" ? "white" : "black"
+      }}
+    >
       {/* Fixed Navbar */}
       <Navbar />
-   
 
-      {/* Add top padding equal to navbar height for all pages */}
-      <div className="pt-[100px]">
+      <div className="pt-[100px] flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
@@ -26,12 +37,25 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/practice" element={<Practice />} />
           <Route path="/news" element={<News />} />
-          <Route path="/client" element={<OurClients/>}/>
+          <Route path="/client" element={<OurClients />} />
         </Routes>
       </div>
-  
-         <Footer/>
-    </BrowserRouter>
+
+      <Footer />
+
+      {/* Floating dark/light button */}
+      <ThemeToggle />
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

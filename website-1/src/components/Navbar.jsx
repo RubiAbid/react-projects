@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -28,6 +28,7 @@ const Navbar = () => {
           <Link to="/faq" className="text-white hover:text-amber-400">FAQ</Link>
           <Link to="/practice" className="text-white hover:text-amber-400">Practice Area</Link>
           <Link to="/client" className="text-white hover:text-amber-400">Our Clients</Link>
+          
           <Link 
             to="/news" 
             className=" text-white py-2 px-4 rounded hover:bg-transparent hover:text-amber-400 transition"
