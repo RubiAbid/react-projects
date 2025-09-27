@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import { AuthProvider } from "./utils/AuthContext";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/courses" element={<Coourses />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/register" element={<Register />} />
+            <Route path="*" element={<ErrorPage/>}/>
           </Routes>
           <Footer />
         </AuthProvider>
