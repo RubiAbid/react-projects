@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
   const loginUser = async (userInfo) => {
     setLoading(true);
     try {
-      // First check if a session already exists
+      //  It checks if a session already exists
       try {
         let currentSession = await account.get();
         console.log("Already logged in:", currentSession);
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
   const logoutUser = async () => {
     setLoading(true);
     try {
-      await account.deleteSession({ sessionId: "current" }); // ✅ object-style parameter
+      await account.deleteSession({ sessionId: "current" }); 
       setUser(null);
     } catch (error) {
       console.error("Logout failed:", error);
@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     try {
       let response = await account.create({
-        userId: ID.unique(), // Unique ID for the user
+        userId: ID.unique(),       // Unique ID for the user
         email: userInfo.email,
         password: userInfo.password1,
         name: userInfo.name,
