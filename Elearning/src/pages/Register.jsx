@@ -1,16 +1,49 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../utils/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const registerForm = useRef(null);
+
+  const { user, registerUser } = useAuth();
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = registerForm.current.name.value;
+    const email = registerForm.current.email.value;
+    const password1 = registerForm.current.password1.value;
+    const password2 = registerForm.current.password2.value;
+
+    if (password1 !== password2) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    const userInfo = { name, email, password1, password2 };
+    registerUser(userInfo);
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#FFEDE1] px-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-2xl font-bold text-[#1B5241] mb-6 text-center">Register</h1>
-        
-        <form className="space-y-4">
+        <h1 className="text-2xl font-bold text-[#1B5241] mb-6 text-center">
+          Register
+        </h1>
+
+        <form ref={registerForm} onSubmit={handleSubmit} className="space-y-4">
           {/* Name */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-1">Name</label>
+            <label className="text-sm font-medium text-gray-700 mb-1">
+              Name
+            </label>
             <input
               required
               type="text"
@@ -22,7 +55,9 @@ const Register = () => {
 
           {/* Email */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
             <input
               required
               type="email"
@@ -34,7 +69,9 @@ const Register = () => {
 
           {/* Password */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="text-sm font-medium text-gray-700 mb-1">
+              Password
+            </label>
             <input
               type="password"
               name="password1"
@@ -45,7 +82,9 @@ const Register = () => {
 
           {/* Confirm Password */}
           <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+            <label className="text-sm font-medium text-gray-700 mb-1">
+              Confirm Password
+            </label>
             <input
               type="password"
               name="password2"
@@ -66,13 +105,16 @@ const Register = () => {
 
         <p className="text-center text-sm text-gray-600 mt-4">
           Already have an account?{" "}
-          <Link to="/login" className="text-[#A05525] font-medium hover:underline">
+          <Link
+            to="/login"
+            className="text-[#A05525] font-medium hover:underline"
+          >
             Login
           </Link>
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
